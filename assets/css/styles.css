@@ -167,7 +167,7 @@ html {
 }
 
 .skills {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 .skills-container {
@@ -224,4 +224,69 @@ html {
   color: var(--primary-color);
   font-size: 28px;
   font-weight: 600;
+}
+
+.projects {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.projects-container::after, .projects-container::before  {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 65px;
+}
+
+.projects-container::before {
+  background: url('../img/divisor-top.svg');
+  transform: translateY(-100%);
+}
+
+.projects-container::after {
+  bottom: 0;
+  background: url('../img/divisor-bottom.svg');
+  transform: translateY(99%);
+}
+
+.projects-container {
+  width: 100%;
+  height: 450px;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.projects-container__title {
+  color: white;
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.projects-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.projects-item {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  gap: 20px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+}
+
+.projects-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 0 0 7px 7px;
 }
