@@ -18,24 +18,57 @@ html {
 }
 
 
-section {
-  display: block;
-}
-
-p, span, h1, h2 {
-  margin: auto;
-}
-
 .main-wrapper {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
   position: relative;
-  z-index: 1;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 980px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-container__title {
+  font-size: 22px;
+  color: var(--primary-color);
+}
+
+.header-container__span {
+  color: white;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  min-width: 980px;
+  height: 100vh;
   background: url('../img/react.jpg');
   background-size: cover;
 }
 
-.main-wrapper__container {
+.banner-wrapper {
   width: 100%;
   height: 100%;
   background-color: rgb(28, 33, 39, 0.8);
@@ -45,70 +78,53 @@ p, span, h1, h2 {
   justify-content: center;
 }
 
-.main-container {
-  width: 980px;
+.banner-container {
+  width: 100%;
   max-width: 980px;
-  padding-left: 20px;
-  height: 100%;
-}
-
-.header {
-  width: 100%;
-  height: 80px;
-  padding: 20px 0;
-  position: absolute;
-}
-
-.header__title {
-  color: var(--primary-color);
-  font-size: 25px;
-}
-
-.header__title--white {
-  color: white;
-}
-
-.top-banner {
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.top-banner__container-title {
-  font-size: 45px;
+.banner-info {
   width: 300px;
-  line-height: 3.5rem;
+  height: 240px;
+}
+
+.banner-info p:nth-last-child(2) {
+  margin-bottom: 30px;
+}
+
+.banner-info__title {
+  font-size: 40px;
+  line-height: 2.7rem;
   margin-bottom: 10px;
 }
 
-.top-banner__container-p {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5rem;
-}
-
-.top-banner__container-p--blue {
-  color: var(--primary-color);
-}
-
-.top-banner__container-btn {
-  text-decoration: none;
-  margin-top: 30px;
-  width: 100%;
-  height: 40px;
+.banner-info__btn {
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: var(--primary-color);
+  justify-content: center;
+  text-decoration: none;
   border: 1px solid var(--primary-color);
   border-radius: 7px;
-  font-weight: 500;
+  color: var(--primary-color);
+  width: 100%;
+  height: 40px;
   font-size: 15px;
-  transition: .3s background-color;
+  font-weight: 600;
+  transition: background-color .3s, color .3s;
 }
 
-.top-banner__container-btn:hover {
-  background-color: var(--primary-color);
+.banner-info__btn:hover {
   color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.banner-info__about {
+  font-size: 18px;
+}
+
+.banner-info__about--span {
+  color: var(--primary-color);
 }
