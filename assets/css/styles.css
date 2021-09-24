@@ -54,6 +54,11 @@ html {
 .social-media__icon {
   fill: white;
   border-radius: 7px;
+  transition: .3s fill;
+}
+
+.social-media__icon:hover {
+  fill: var(--primary-color);
 }
 
 .social-media__anchor {
