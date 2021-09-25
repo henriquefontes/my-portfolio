@@ -38,6 +38,12 @@ section {
   top: 0;
   display: flex;
   justify-content: center;
+  transition: .3s all;
+  z-index: 99;
+}
+
+.header--background {
+  background-color: var(--secondary-color);
 }
 
 .header-container {
