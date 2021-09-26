@@ -49,10 +49,10 @@ const typeMachine = ({ element, messages, interval, loop }) => {
 const bannerMessages = [
   "Web developer",
   "Games enjoyer",
-  "Zula Hater"
+  "Javascript enthusiast"
 ]
 
-const typeMessages = typeMachine({
+const typeBannerMessages = typeMachine({
   element: document.getElementById('work'),
   messages: bannerMessages,
   interval: 200,
