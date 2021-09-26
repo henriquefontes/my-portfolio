@@ -171,6 +171,18 @@ section {
   color: var(--primary-color);
 }
 
+.banner-type-area {
+  display: flex;
+}
+
+.banner-type-area__divisor {
+  margin-left: 3px;
+  font-weight: 400;
+  animation: pop .8s;
+  animation-iteration-count: infinite;
+  user-select: none;
+}
+
 .skills {
   margin-bottom: 150px;
 }
@@ -349,4 +361,13 @@ section {
 .projects-item__btn:hover {
   color: var(--secondary-color);
   background-color: var(--primary-color);
+}
+
+#work {
+  height: 27px;
+}
+
+@keyframes pop {
+  0% { opacity: 0; };
+  100% { opacity: 1; }
 }
