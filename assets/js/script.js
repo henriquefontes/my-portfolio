@@ -16,7 +16,7 @@ const typeMachine = ({ element, messages, interval, loop }) => {
     let currentMessage = ''
     let currentLetters = ''
 
-    const renderWord = () => {
+    const renderMessage = () => {
       const isLastMessage = currentMessageIndex == messages.length
 
       if (isLastMessage) {
@@ -39,8 +39,8 @@ const typeMachine = ({ element, messages, interval, loop }) => {
         currentLetterIndex = 0
       }
     }
-    
-    typeEffect = setInterval(renderWord, interval)
+
+    typeEffect = setInterval(renderMessage, interval)
   }
 
   renderMessageIntoDOM()
