@@ -30,10 +30,10 @@ const typeMachine = ({ element, messages, interval, loop }) => {
 
       currentMessage = messages[currentMessageIndex]
       currentLetters = currentMessage.slice(0, currentLetterIndex++)
-
-      const isLastLetter = currentLetters.length == currentMessage.length
-
+      
       element.textContent = currentLetters
+      
+      const isLastLetter = currentLetters.length == currentMessage.length
 
       if (isLastLetter) {
         currentMessageIndex++
