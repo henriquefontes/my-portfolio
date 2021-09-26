@@ -56,7 +56,7 @@ const typeBannerMessages = typeMachine({
   element: document.getElementById('work'),
   messages: bannerMessages,
   interval: 200,
-  loop: true
+  loop: false
 })
 
 window.addEventListener('scroll', handlePageScroll)
