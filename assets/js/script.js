@@ -15,6 +15,7 @@ const typeMachine = ({ element, messages, interval, loop }) => {
     let currentLetterIndex = 0
     let currentMessage = ''
     let currentLetters = ''
+    let shouldBeRemoved = false
 
     const renderMessage = () => {
       const isLastMessage = currentMessageIndex == messages.length
@@ -28,16 +29,38 @@ const typeMachine = ({ element, messages, interval, loop }) => {
         }
       }
 
-      currentMessage = messages[currentMessageIndex]
-      currentLetters = currentMessage.slice(0, currentLetterIndex++)
-      element.textContent = currentLetters
+      const changeMessage = () => {
+        currentMessage = messages[currentMessageIndex++]
+        currentLetterIndex = 0
+      }
+      
+      const addLetter = () => {
+        currentMessage = messages[currentMessageIndex]
+        currentLetters = currentMessage.slice(0, currentLetterIndex++)
+        element.textContent = currentLetters
+      }
+
+      const removeLetter = () => {
+        currentMessage = messages[currentMessageIndex]
+        currentLetters = currentMessage.slice(0, currentLetterIndex--)        
+        element.textContent = currentLetters
+
+        if (currentLetters.length == 0) {
+          shouldBeRemoved = false
+          changeMessage()
+        }
+      }
+
+      const setState = shouldBeRemoved ? removeLetter : addLetter
+
+      setState()
       
       const isLastLetter = currentLetters.length == currentMessage.length
 
       if (isLastLetter) {
-        currentMessageIndex++
-        currentLetterIndex = 0
+        shouldBeRemoved = true
       }
+
     }
 
     typeEffect = setInterval(renderMessage, interval)
@@ -55,8 +78,8 @@ const bannerMessages = [
 const typeBannerMessages = typeMachine({
   element: document.getElementById('work'),
   messages: bannerMessages,
-  interval: 200,
-  loop: false
+  interval: 80,
+  loop: true
 })
 
 window.addEventListener('scroll', handlePageScroll)
