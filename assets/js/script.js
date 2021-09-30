@@ -10,7 +10,7 @@ const handlePageScroll = () => {
 const typeMachine = ({ element, messages, interval, loop }) => {
   let typeEffect
 
-  const renderMessageIntoDOM = () => {
+  const render = () => {
     let currentMessageIndex = 0
     let currentLetterIndex = 0
     let currentMessage = ''
@@ -66,7 +66,7 @@ const typeMachine = ({ element, messages, interval, loop }) => {
     typeEffect = setInterval(renderMessage, interval)
   }
 
-  renderMessageIntoDOM()
+  return { render }
 }
 
 const bannerMessages = [
@@ -78,8 +78,9 @@ const bannerMessages = [
 const typeBannerMessages = typeMachine({
   element: document.getElementById('work'),
   messages: bannerMessages,
-  interval: 80,
+  interval: 70,
   loop: true
 })
 
 window.addEventListener('scroll', handlePageScroll)
+typeBannerMessages.render()
