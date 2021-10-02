@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: white;
 }
@@ -14,6 +13,25 @@ html {
 :root {
   --primary-color: #4ECCA3;
   --secondary-color: #232931;
+  --dark-secondary-color: #1A1F25;
+  --dracula-pink: #FF79C6;
+  --dracula-purple: #BD93F9;
+  --dracula-yellow: #F1FA8C;
+  --dracula-background: #282A36;
+}
+
+.text-dracula-yellow {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-dracula-pink {
+  color: var(--dracula-pink);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-dracula-purple {
+  color: var(--dracula-purple);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 section {
@@ -40,6 +58,7 @@ section {
   justify-content: center;
   transition: .3s all;
   z-index: 99;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header--background {
@@ -93,6 +112,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #eee;
 }
 
 .banner-bg1 {
@@ -100,7 +120,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 10;
   height: 100vh;
   background: url('../img/react.jpg');
   background-size: cover;
@@ -113,7 +133,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 20;
   background-color: rgb(28, 33, 39, 0.8);
   -webkit-box-shadow: inset 750px 0px 80px 0px rgba(35,41,49,0.6); 
   box-shadow: inset 750px 0px 80px 0px rgba(35,41,49,0.6);
@@ -125,9 +145,12 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .banner-info {
+  z-index: 30;
   width: 300px;
   height: 240px;
 }
@@ -183,69 +206,118 @@ section {
   user-select: none;
 }
 
-.skills {
+.banner-scroll-img {
+  width: 5rem;
+  padding: 1rem;
+  z-index: 30;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.about-me {
   margin-bottom: 150px;
 }
 
-.skills-container {
+.about-me-container {
   margin-top: 60px;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+.about-me__image {
+  width: 25rem;
+  height: 100%;
+}
+
+.about-me__vscode {
+  width: 24.063rem;
+  height: 25.625rem;
+  background-color: var(--dracula-background);
+  border-radius: 0.430rem;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.skills-container__title {
-  color: var(--primary-color);
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 60px;
+.about-me__vscode-top {
+  width: 100%;
+  height: 0.938rem;
+  padding-right: 10px;
+  border-radius: 0.430rem 0.430rem 0 0;
+  background-color: var(--dark-secondary-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
 }
 
-.skills-container__items {
+.about-me__vscode-top__button {
+  width: 10px;
+  height: 10px;
+  border-radius: 0.430rem;
+}
+
+.about-me__vscode-top__button--red {
+  background-color: #D72728;
+}
+
+.about-me__vscode-top__button--blue {
+  background-color: #4081F0;
+}
+
+.about-me__vscode-top__button--yellow {
+  background-color: #FF761B;
+}
+
+.about-me__vscode__text-container {
   width: 100%;
   height: 100%;
   display: flex;
+  padding: 30px 40px 0 20px;
   justify-content: space-between;
-  gap: 20px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.skills-container__item {
-  width: 280px;
-  height: 300px;
-  position: relative;
-  border-radius: 7px;
-  margin-bottom: 5rem;
-  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+.about-me__vscode__text-container__left, .about-me__vscode__text-container__right{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 5px;
 }
 
-.skills-container__item:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
+.about-me__vscode__text-container__right {
+  margin-left: 1.2rem;
   width: 100%;
-  height: 5px;
-  background-color: var(--primary-color);
+  height: 100%;
 }
 
-.skills-item__icon {
-  width: 70px;
+.about-me__vscode__text-container__right__text--yellow {
+  color: var(--dracula-yellow);
 }
 
-.skills-item__title {
-  color: var(--primary-color);
-  font-size: 28px;
-  font-weight: 600;
+.about-me__vscode__text-container__right__text--purple {
+  color: var(--dracula-purple);
+}
+
+.about-me__vscode__text-container__right__text--pink {
+  color: var(--dracula-pink);
+
+}
+
+.code-formatted {
+  margin-left: 2rem;
+}
+
+.code-double-formatted {
+  margin-left: 4rem;
 }
 
 .projects {
   margin-bottom: 50px;
   position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .projects-container::after, .projects-container::before  {

@@ -78,7 +78,7 @@ const bannerMessages = [
 const typeBannerMessages = typeMachine({
   element: document.getElementById('work'),
   messages: bannerMessages,
-  interval: 70,
+  interval: 80,
   loop: true
 })
 
